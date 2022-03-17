@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tremor/view/home/controller/home_cubit.dart';
 import 'package:tremor/view/splash/splash_view.dart';
@@ -31,6 +32,9 @@ void main() async {
   await CacheHelper.init();
   await CacheHelper.getTheme ?? await CacheHelper.cacheTheme(value: false);
   bool? isDark = await CacheHelper.getTheme;
+  //===============================================================
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   //===============================================================
   BlocOverrides.runZoned(
     () {
