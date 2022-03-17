@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/app_colors.dart';
-
 ThemeData lightTheme(BuildContext context) {
   return ThemeData.light().copyWith(
     pageTransitionsTheme: const PageTransitionsTheme(
